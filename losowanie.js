@@ -1,13 +1,3 @@
-// const obj =[{
-//     id: 1,
-//    name: 'kki'
-//  }];
- 
- 
-//  const obj2 = [...obj, {id2: 'jjk'}];
- 
-//  console.log(obj2);
-
 const obj = {
     ship: []
 }
@@ -36,47 +26,47 @@ console.log('ship = ', obj.ship);
 
 // na dole dziala
 
-// console.log('Start', row, col);
+console.log('Start', obj.ship);
 
-// // 0 prawo 1 duł 2 lewo 3 góra
+// 0 prawo 1 duł 2 lewo 3 góra
 function choseDirection(){
     return Math.floor(Math.random() * 4);
 }
 
 
-// // check if posible
+// check if posible
 function checkMove (move){
     switch (move) {
         case 0:
-          return obj.ship.col + 1 < 3;
+          return obj.col + 1 < 3;
           break;
         case 1:
-          return obj.ship.row + 1 < 3;
+          return obj.row + 1 < 3;
           break;
         case 2:
-          return obj.ship.col - 1 >= 0;
+          return obj.col - 1 >= 0;
           break;
         case 3:
-          return obj.ship.row - 1 >= 0;
+          return obj.row - 1 >= 0;
           break;
       }
 }
 
-// function dodawanie(move){
+function dodawanie(move){
     
-//     return move+row;
-// }
-// for(let i=0; i<4; i++){
+    return move+obj.row;
+}
+for(let i=0; i<4; i++){
 
-//     let isPosible = false;
-//     while (!isPosible) {
+    let isPosible = false;
+    while (!isPosible) {
     
-//         let move = choseDirection();
-//         console.log('move is', move)
-//         isPosible = checkMove(move);
+        let move = choseDirection();
+        console.log('move is', move)
+        isPosible = checkMove(move);
     
     
-//         console.log('funkcja dodawanie', dodawanie(move));
-//     }
-// }
+        console.log('funkcja dodawanie', dodawanie(move));
+    }
+}
 
