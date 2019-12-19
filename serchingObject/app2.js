@@ -1,4 +1,4 @@
-let arr = [{row: 1, col:1}];
+let arr = [];
 
 const newMumbers = function newNumbers(){
     const row = Math.floor(Math.random() * 2);
@@ -13,15 +13,19 @@ const newMumbers = function newNumbers(){
     });
 }
 
-/// to jest dobre do uzycia potem
 const numbers = newMumbers();
-console.log(numbers)
-if (found(numbers)){
-    console.log('znalaz')
-} else {
-    console.log('nie znalaz')
-   arr = [...arr, numbers];
-
+let numbersFound = found(numbers);;
+let i =0;
+while(!numbersFound){
+        numbersFound = found(numbers);
+    if(!numbersFound){
+        arr = [...arr, numbers];
+    }
 }
 
+
+
+
+
 console.log(arr);
+console.log(i);
