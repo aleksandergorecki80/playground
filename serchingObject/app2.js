@@ -16,6 +16,8 @@ const newMumbers = function newNumbers(){
 /// to jest dobre do uzycia potem
 const numbers = newMumbers();
 console.log(numbers)
+
+const 
 if (found(numbers)){
     console.log('znalaz')
 } else {
