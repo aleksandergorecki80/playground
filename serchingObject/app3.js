@@ -1,13 +1,13 @@
 console.log("kki3");
 
-const arr = [{ row: 0, col: 0 }, { row: 1, col: 1 }];
+const arr = [{ row: 0, col: 0 }, { row: 1, col: 1 }, { row: 1, col: 0 }];
 console.log('arr na poczatku', arr);
 
 const newMumbers = function newNumbers() {
   const newNumArr = [];
   for (i = 0; i < 2; i++) {
-    const row = Math.floor(Math.random() * 5);
-    const col = Math.floor(Math.random() * 5);
+    const row = Math.floor(Math.random() * 4);
+    const col = Math.floor(Math.random() * 4);
     newNumArr.push({ row: row, col: col });
   }
   return newNumArr;
@@ -39,11 +39,11 @@ for (let length = arr.length; length+2 !== arr.length; ) {
 
     if(found(element) === undefined){
       console.log(found(element));
-      console.log('nie znalaz w tablicy mozna dodac', k);
+      console.log('nie znalaz w tablicy mozna dodac', emptySpacesFound);
       emptySpacesFound++;
       
       if(emptySpacesFound==2){
-        console.log(k);
+        console.log(emptySpacesFound);
         numbers.forEach(element => {
           arr.push(element);
         });
@@ -53,7 +53,7 @@ for (let length = arr.length; length+2 !== arr.length; ) {
 
   
  console.log('length', length+2)
- console.log("k", k);
+ console.log("emptySpacesFound", emptySpacesFound);
 }
 
 console.log("arr", arr);
