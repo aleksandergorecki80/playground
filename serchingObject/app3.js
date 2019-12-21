@@ -1,73 +1,60 @@
 console.log("kki3");
 
-
-  //  return {row: 1, col:1};
-
-
-// const numbers = newMumbers();
-
-//  const found = function find(numbers){
-//     return arr.find(function(obj){
-//          return obj.col === numbers.col && obj.row === numbers.row;
-//     });
-// }
-
-
-
-// console.log("newMumbers", numbers);
-// console.log("found", found(numbers));
-
-
-// if (found(numbers) == undefined) {
-//   console.log("jest undefind");
-// } else {
-//   console.log("nie jest");
-// }
-
-// let i = numbers;
-
-let arr = [{ row: 1, col: 1 }];
+const arr = [{ row: 0, col: 0 }, { row: 1, col: 1 }];
+console.log('arr na poczatku', arr);
 
 const newMumbers = function newNumbers() {
-  const row = Math.floor(Math.random() * 2);
-  const col = Math.floor(Math.random() * 2);
-  return { row, col };
+  const newNumArr = [];
+  for (i = 0; i < 2; i++) {
+    const row = Math.floor(Math.random() * 5);
+    const col = Math.floor(Math.random() * 5);
+    newNumArr.push({ row: row, col: col });
+  }
+  return newNumArr;
 };
 
 const found = function find(numbers) {
-    return arr.find(function(obj) {
-      return obj.col === numbers.col && obj.row === numbers.row;
-    });
-  };
+  return arr.find(function(obj) {
+    return obj.col === numbers.col && obj.row === numbers.row;
+  });
+};
+
+// const testNumbers = [{row: 1, col: 1}, {row: 1, col: 1}, {row: 1, col: 0}];
+
+// testNumbers.forEach(element => {
+//   console.log(found(element));
+// });
+
+// to działa ponizej
+// ale nie dokońca
+// trzeba zrobić zmienną która liczy ile jest found undefined
+// i jesli mniej niz potrzeba to nie pozwala zrobić pusch numbers
 
 
+for (let length = arr.length; length+2 !== arr.length; ) {
+  let numbers = newMumbers(); // czyli tworzenie statku razem z dodawaniem pól
+  // let numbers = [{ row: 0, col: 0 }, { row: 1, col: 1 }]; // czyli tworzenie statku razem z dodawaniem pól
+  let emptySpacesFound = 0;
+  numbers.forEach(element => {
 
-// let length = arr.length;
-// do {
+    if(found(element) === undefined){
+      console.log(found(element));
+      console.log('nie znalaz w tablicy mozna dodac', k);
+      emptySpacesFound++;
+      
+      if(emptySpacesFound==2){
+        console.log(k);
+        numbers.forEach(element => {
+          arr.push(element);
+        });
+      }
+    }
+  });
+
   
-//   let numbers = newMumbers();
-//   console.log("numbers", numbers);
-//   console.log(found(numbers));
-//   k++;
-//   if (found(numbers) == undefined) {
-//     arr.push(numbers);
-//   }
-// } while (arr.length == length);
-
-
-let k = 0;    // opcjonalnie
-for(const length = arr.length; length==arr.length;){
-  let numbers = newMumbers();
-  console.log("numbers", numbers);
-  console.log(found(numbers));
-  k++;
-  if (found(numbers) == undefined) {
-    arr.push(numbers);
-  }
+ console.log('length', length+2)
+ console.log("k", k);
 }
-console.log("k", k);
-console.log(arr);
-console.log(arr.length);
-console.log('arr.length+1', arr.length+1);
 
-
+console.log("arr", arr);
+console.log("arr length", arr.length);
