@@ -4,24 +4,21 @@
 // ];
 
 const newMumbers = function newNumbers(){
-    const row = Math.floor(Math.random() * 2);
-     const col = Math.floor(Math.random() * 2);
+    const row = Math.floor(Math.random() * 6);
+     const col = Math.floor(Math.random() * 6);
      return [{row, col}];
  }
 
-function addElementsOfArray(start, newArr){
-    return [...start, ...newArr];
+function addElementsOfArray(one, two, three){
+    return [...one, ...two, ...three];
 }
 
-const start = [];
-const newArr = newMumbers();
 
-const ship = addElementsOfArray(start, newArr);
-console.log('ship', ship);
 
 const view = [
     {row:0, col:0}, 
     {row:1, col:1},
+    {row:1, col:2},
     {row:1, col:0}
 ];
 
@@ -37,7 +34,29 @@ function findInArray(ship, view){
     } 
 };
 
-const found = findInArray(ship, view); 
+let found = true;
+let ship = [];
+do{
+    const one = newMumbers();
+    const two = newMumbers();
+    const three = newMumbers();
+        
+    ship = addElementsOfArray(one, two, three);
+    found = findInArray(ship, view); 
+    console.log('ship', ship);
+}
+while(found);
+
+
 console.log(found);
 // console.log(findInArray(ship, view));
 
+console.log('SHIP END == ' , ship);
+
+for(i = 0, j = 0; (i < ship.length)  || (j < view.length); i++, j++){
+    console.log('i = ', i, 'j = ', j);
+    if(ship[i].row === view[j].row && ship[i].col === view[j].col){
+        console.log('liczba elementow sie nie zgadzasie');
+//  ta petla nie zadziala gdyz w jednej z tablic jest mniej elementow
+    }
+}
