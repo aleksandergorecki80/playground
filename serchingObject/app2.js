@@ -22,6 +22,30 @@ function findInArrayFromArrau(numbers){
 
 const numbers = [{row: 6, column: 1}, {row: 8, column: 1}];
 
+<<<<<<< HEAD
+=======
+
+
+var myArray = [
+    {id:1, name:"bob"},
+    {id:2, name:"dan"},
+    {id:3, name:"barb"},
+   ];
+const myItems = [2, 3];
+   
+   // grab the Array item which matchs the id "2"
+   var item = myArray.find(item => item.id === 2);
+   
+
+myItems.forEach(item => {
+    myArray.find((element)=>{
+        console.log(item === element.id); 
+
+    });
+});
+   // print
+//    console.log(item.name);
+>>>>>>> 803edeadc3b832a786864385b4a37add2c65980b
 
 
 var myArray = [
@@ -52,3 +76,8 @@ myItems.forEach(item => {
 //    console.log(item.name);
 
 
+<<<<<<< HEAD
+=======
+// console.log('numbers', numbers);
+// console.log('arr', arr);
+>>>>>>> 803edeadc3b832a786864385b4a37add2c65980b

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 const arr = [{ col: 0, row:0 }];
@@ -38,3 +39,12 @@ if(howManyFound === newArr.length){
 
 
 
+=======
+let ile = 0;
+do{
+
+    const nr = Math.floor(Math.random() * 5);
+    console.log(nr);
+    ile++
+} while (ile<2);
+>>>>>>> 803edeadc3b832a786864385b4a37add2c65980b
