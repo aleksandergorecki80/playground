@@ -13,8 +13,8 @@ function Losowanie(){
     this.updateSteps = function(steps){
         
     }
-    this.compareSteps = function(nextStep){
-        return this.steps[0] === nextStep;
+    this.compareSteps = function(nextStep, lastStep){
+        return this.steps[lastStep] === this.oposits[nextStep];
     }
 }
 
@@ -23,26 +23,27 @@ const los2 = new Losowanie();
 
 let randomStep2 = '';
 for(let i  = 0; i<2; i++){
-
-
-    randomStep2 = los2.randomStep();
+if(i===0){
+    const randomStep2 = los2.randomStep();
     console.log('randomStep2', randomStep2);
     
      
     console.log('wykonuje krok');
+    
+    
     los2.setStep(randomStep2);    
     console.log('los2.steps', los2.steps);
-
-    if(i>0){
+} else if(i>0){
+        let lastStep = i-1;
         console.log('trzeba sprawdzic czy mozna');
-        console.log('randomStep2 w drugim losowaniu', randomStep2);
-        let comparedSteps = los2.compareSteps(randomStep2);
-        console.log('compareSteps', comparedSteps)
         do{
             randomStep2 = los2.randomStep();
-            comparedSteps = los2.compareSteps(randomStep2);
+            console.log('randomStep2 w petli', randomStep2)
+            comparedSteps = los2.compareSteps(randomStep2, lastStep);
             console.log('compareSteps w while', comparedSteps)
-        }while(!comparedSteps)
+        }while(comparedSteps);
+        los2.setStep(randomStep2);    
+        console.log('los2.steps', los2.steps);
     }
 
 }
