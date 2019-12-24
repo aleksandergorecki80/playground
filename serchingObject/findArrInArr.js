@@ -25,7 +25,7 @@ const view = [
 function findInArray(ship, view){
     for(let i=0; i<ship.length; i++){
         for(let k=0; k<view.length; k++){
-            console.log('ship', ship[i], 'view = ', view);
+            console.log('ship', ship[i], 'view = ', view[k]);
         if(ship[i].row === view[k].row && ship[i].col === view[k].col){
             console.log('zgadzasie');
             return  true;
@@ -53,10 +53,10 @@ console.log(found);
 
 console.log('SHIP END == ' , ship);
 
-for(i = 0, j = 0; (i < ship.length)  || (j < view.length); i++, j++){
-    console.log('i = ', i, 'j = ', j);
-    if(ship[i].row === view[j].row && ship[i].col === view[j].col){
-        console.log('liczba elementow sie nie zgadzasie');
-//  ta petla nie zadziala gdyz w jednej z tablic jest mniej elementow
-    }
-}
+// for(i = 0, j = 0; (i < ship.length)  || (j < view.length); i++, j++){
+//     console.log('i = ', i, 'j = ', j);
+//     if(ship[i].row === view[j].row && ship[i].col === view[j].col){
+//         console.log('liczba elementow sie nie zgadzasie');
+// //  ta petla nie zadziala gdyz w jednej z tablic jest mniej elementow
+//     }
+// }
