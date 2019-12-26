@@ -41,7 +41,9 @@ do{
     const two = newMumbers();
     const three = newMumbers();
         
+    
     ship = addElementsOfArray(one, two, three);
+    // ship = addElementsOfArray(one);
     found = findInArray(ship, view); 
     console.log('ship', ship);
 }
@@ -53,10 +55,10 @@ console.log(found);
 
 console.log('SHIP END == ' , ship);
 
-for(i = 0, j = 0; (i < ship.length)  || (j < view.length); i++, j++){
-    console.log('i = ', i, 'j = ', j);
-    if(ship[i].row === view[j].row && ship[i].col === view[j].col){
-        console.log('liczba elementow sie nie zgadzasie');
-//  ta petla nie zadziala gdyz w jednej z tablic jest mniej elementow
-    }
-}
+// for(i = 0, j = 0; (i < ship.length)  || (j < view.length); i++, j++){
+//     console.log('i = ', i, 'j = ', j);
+//     if(ship[i].row === view[j].row && ship[i].col === view[j].col){
+//         console.log('liczba elementow sie nie zgadzasie');
+// //  ta petla nie zadziala gdyz w jednej z tablic jest mniej elementow
+//     }
+// }
