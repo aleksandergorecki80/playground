@@ -25,7 +25,7 @@ const view = [
 function findInArray(ship, view){
     for(let i=0; i<ship.length; i++){
         for(let k=0; k<view.length; k++){
-            console.log('ship', ship[i], 'view = ', view);
+            console.log('ship', ship[i], 'view = ', view[k]);
         if(ship[i].row === view[k].row && ship[i].col === view[k].col){
             console.log('zgadzasie');
             return  true;
