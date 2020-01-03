@@ -41,7 +41,9 @@ do{
     const two = newMumbers();
     const three = newMumbers();
         
+    
     ship = addElementsOfArray(one, two, three);
+    // ship = addElementsOfArray(one);
     found = findInArray(ship, view); 
     console.log('ship', ship);
 }
